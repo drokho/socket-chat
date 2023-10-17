@@ -9,7 +9,8 @@ const io = new Server(server);
 console.log(import.meta.url);
 
 app.get('/', (req, res) => {
-    res.sendFile(new URL('C:/webdev/socket/index.html').pathname);
+    //res.sendFile(new URL('C:/webdev/socket/index.html').pathname);
+    res.sendFile(new URL('opt/render/project/src/index.html').pathname);
 });
 
 io.on('connection', (socket) => {
