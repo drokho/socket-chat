@@ -3,8 +3,8 @@ Small chat app using Socket.io
 
 Made from docs on Socket.io: https://socket.io/docs/v4/tutorial/step-1
 
-##Install
+## Install
 npm install
 
-##Run
+## Run
 node index.js
