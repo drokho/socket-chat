@@ -5,12 +5,13 @@ import { Server } from 'socket.io';
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
+const PORT = 3000 || process.env.PORT;
 
 console.log(import.meta.url);
 
 app.get('/', (req, res) => {
     //res.sendFile(new URL('C:/webdev/socket/index.html').pathname);
-    res.sendFile(new URL('opt/render/project/src/index.html').pathname);
+    res.sendFile(new URL('./index.html', import.meta.url).pathname);
 });
 
 io.on('connection', (socket) => {
@@ -19,7 +20,4 @@ io.on('connection', (socket) => {
     });
   });
 
-
-server.listen(3000, () => {
-  console.log('server running at http://localhost:3000');
-});
+  server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
