@@ -6,6 +6,8 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
+console.log(import.meta.url);
+
 app.get('/', (req, res) => {
     res.sendFile(new URL('C:/webdev/socket/index.html').pathname);
 });
